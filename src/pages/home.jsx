@@ -7,7 +7,8 @@ import Vector from "../assets/image/Group 6.png"
 import PortfolioItem from "../componet/pages/Portfolio"
 import ServiceItem from "../componet/pages/services"
 import { CSSTransition } from 'react-transition-group';
-
+import port2 from "../assets/image/port2.png"
+import port1 from "../assets/image/Screenshot 2023-12-19 155607.png"
 
 const Homepage =()=>{
 
@@ -16,21 +17,20 @@ const Homepage =()=>{
         title: "Front-end Developer",
         duration: "Feb 2023 - July 2023",
         description: "Project Documentation, App Deployment, and Report Writing",
+        description1: "Project Documentation, App Deployment, and Report Writing",
+        description2: "Project Documentation, App Deployment, and Report Writing",
+        image:port1
         
     },
     {
       title: "Front-end Developer",
       duration: "Feb 2023 - July 2023",
-      description: "Project Documentation, App Deployment, and Report Writing"
+      description: "Project Documentation, App Deployment, and Report Writing",
+      description1: "Project Documentation, App Deployment, and Report Writing",
+      description2: "Project Documentation, App Deployment, and Report Writing",
+      image:port2
   },
-  {
-  
-    description: "Project Documentation, App Deployment, and Report Writing"
-},
-{
-    
-    description: "Project Documentation, App Deployment, and Report Writing"
-}
+
     
 ];
     return(
@@ -41,7 +41,7 @@ const Homepage =()=>{
 <section id="home">
 <Home/>
 </section>
-<div style={{ paddingLeft: '9%', paddingRight: '9%' }}>
+<div  className="others" >
 <section  id="about">
 <h1>About</h1>
 <About/>
@@ -82,7 +82,7 @@ consequat"
 />
 </div>
 </section>
-<section id="Portfolio" className=" ">
+<section id="portfolio" className="">
     <h1>PORTFOLIO</h1>
     <div className="portifoliaL">
     <div className="leftcont">
@@ -101,6 +101,9 @@ transitionEnterTimeout={500}
             title={item.title}
             duration={item.duration}
             description={item.description}
+            description1={item.description1}
+            description2={item.description2}
+            image={item.image}
         />
         
     ))}

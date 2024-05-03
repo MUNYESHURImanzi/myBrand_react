@@ -11,7 +11,7 @@ const BlogContainer = () => {
     const [author, setAuthor] = useState('');
     const [blogName, setBlogName] = useState('');
     const [formData, setFormData] = useState(null);
-    const [formMode, setFormMode] = useState("save");
+  
     const [blogContent, setBlogContent] = useState('');
     const [imageFile, setImageFile] = useState(null);
 
@@ -22,13 +22,16 @@ const BlogContainer = () => {
     const handleOpenForm = () => {
         setIsFormOpen(true);
         
+        
+        
     };
 
  
 
     const handleSave = async () => {
         try {
-            setFormMode("save");
+            
+            
             const formData = new FormData();
             formData.append('author', author);
             formData.append('title', blogName);
@@ -164,19 +167,13 @@ const BlogContainer = () => {
             setBlogName(title);
             setBlogContent(content);
             setIsFormOpen(true);
-            setFormMode("edit");
-    
            
-            setFormData({
-                author,
-                blogName: title,
-                blogContent: content
-            });
         } catch (error) {
             console.error('An error occurred while fetching post data for editing:', error);
             toast.error('Failed to fetch post data for editing. Please try again later.');
         }
     };
+    
     
 
     return (
@@ -195,8 +192,7 @@ const BlogContainer = () => {
                 setImageFile={setImageFile}
                 handleSave={handleSave}
                 handleUpdate={handleUpdate}
-                formData={formMode} 
-                setFormMode={setFormMode}
+                
             />
             <table className="table text-nowrap">
                 <thead>

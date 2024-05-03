@@ -1,15 +1,19 @@
 
-import  Yellow from "../../assets/image/Vector (7).png"
-const PortfolioItem = ({ title, duration, description }) => {
+const PortfolioItem = ({ title, duration, description1,description2,description ,image}) => {
     return (
         <div className="portcont">
             <h2>{title}</h2>
             <p>{duration}</p>
             <div className="textp">
-                <span className="yellow-icon">
-                    <img src={Yellow} alt="" srcSet="" style={{ fontSize: '11px' }} />
-                </span>
+                
+                <div className="pprar">
                 <p>{description}</p>
+                <p>{description1}</p>
+                <p>{description2}</p>
+                </div>
+                <span className="yellow-icon">
+                    <img src={image} alt="" srcSet=""  />
+                </span>
             </div>
         </div>
     );

@@ -26,7 +26,7 @@ const Sidebar = () => {
                             </Link>
                         </li>
                         <li className="sidebar-item">
-                            <Link className="sidebar-link" to="/contact" aria-expanded="false">
+                            <Link className="sidebar-link" to="/Dashbordcontact" aria-expanded="false">
                                 <i className="fa fa-info-circle" aria-hidden="true"></i>
                                 <span className="hide-menu">Contact</span>
                             </Link>

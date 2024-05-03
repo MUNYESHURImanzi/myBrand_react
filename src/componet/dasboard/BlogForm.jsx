@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import 'trix';
 import 'trix/dist/trix.css';
 
@@ -15,7 +15,7 @@ const BlogForm = ({
     handleSave,
     handleUpdate,
     formData,
-    formMode
+   
 }) => {
     const trixInput = useRef(null);
 
@@ -52,7 +52,7 @@ const BlogForm = ({
                     <div className="form-input" id="editIndex">
                         <div>
                             <label htmlFor="author">Author Name:</label>
-                            <input type="text" id="author" name="author" placeholder="Enter author name" value={author} onChange={(e) => setAuthor(e.target.value)} required />
+                            <input type="text" id="author" name="author" placeholder="Enter author name"value={author} onChange={(e) => setAuthor(e.target.value)} required />
                         </div>
                         <div>
                             <label htmlFor="blogName">Blog Name:</label>
@@ -70,13 +70,14 @@ const BlogForm = ({
                             input={blogContent}
                             ref={trixInput}
                             placeholder="Write your blog post here..."
+                            style={{ maxHeight: '200px', overflowY: 'auto' }} 
                         />
                     </div>
-                    {formMode === "save" ? (
-                            <button type="button" className="save-button"  onClick={handleSave}>Save Post</button>
-                        ) : (
-                            <button type="button" className="update-button" onClick={handleUpdate}>Update</button>
-                        )}
+                    
+                        <button type="button" className="save-button" onClick={handleSave}>Save Post</button>
+              
+                        <button type="button" className="update-button" onClick={handleUpdate}>Update</button>
+                   
                 </form>
             </div>
         )
